@@ -62,7 +62,7 @@ control MyComputeChecksum(inout headers  hdr, inout metadata meta) {
 /* Deparser  */
 control MyDeparser(packet_out packet, in headers hdr, inout metadata meta) {
     apply {
-        packet.emit(hdr.all_bytes);
+        packet.emit(hdr.hder);
         packet.emit(meta.data);
     }
 }
